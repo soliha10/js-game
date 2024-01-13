@@ -74,10 +74,8 @@ var elCurrencyResult = document.querySelector(".js-currency-result");
 elCurrencyForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   var inputValue = Number(elCurrencyInput.value);
-  var selectValue = elSelect.value;
-  var USA_VALUE = inputValue * 12400;
-  var RUBL_VALUE = inputValue * 200;
-  var EURO_VALUE = inputValue * 20000;
+  var selectValue = Number(elSelect.value);
+  elCurrencyResult.textContent = inputValue * selectValue;
   // var res ;
   // debugger;
   // if (!isNaN(inputValue) && selectValue.length) {
@@ -96,16 +94,16 @@ elCurrencyForm.addEventListener("submit", function (evt) {
   // else {
   //   elCurrencyResult.textContent = "Enter amount";
   // }
-  if (selectValue === "USD") {
-    elCurrencyResult.textContent = USA_VALUE;
-    console.log(USA_VALUE);
-  } else if (selectValue === "RUBL") {
-    elCurrencyResult.textContent = RUBL_VALUE;
-  }
-  else if (selectValue === "EURO_VALUE") {
-    elCurrencyResult.textContent = EURO_VALUE;
-  }
-  else {
-    console.log("error");
-  }
+  // if (selectValue === "USD") {
+  //   elCurrencyResult.textContent = USA_VALUE;
+  //   console.log(USA_VALUE);
+  // } else if (selectValue === "RUBL") {
+  //   elCurrencyResult.textContent = RUBL_VALUE;
+  // }
+  // else if (selectValue === "EURO_VALUE") {
+  //   elCurrencyResult.textContent = EURO_VALUE;
+  // }
+  // else {
+  //   console.log("error");
+  // }
 });
