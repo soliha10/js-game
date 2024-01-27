@@ -76,6 +76,8 @@ elCurrencyForm.addEventListener("submit", function (evt) {
   var inputValue = Number(elCurrencyInput.value);
   var selectValue = Number(elSelect.value);
   elCurrencyResult.textContent = inputValue * selectValue + " so'm";
+  elCurrencyResult.textContent = inputValue * selectValue;
+
   // var res ;
   // debugger;
   // if (!isNaN(inputValue) && selectValue.length) {
@@ -95,4 +97,16 @@ elCurrencyForm.addEventListener("submit", function (evt) {
   //   elCurrencyResult.textContent = "Enter amount";
   // }
 
+  // if (selectValue === "USD") {
+  //   elCurrencyResult.textContent = USA_VALUE;
+  //   console.log(USA_VALUE);
+  // } else if (selectValue === "RUBL") {
+  //   elCurrencyResult.textContent = RUBL_VALUE;
+  // }
+  // else if (selectValue === "EURO_VALUE") {
+  //   elCurrencyResult.textContent = EURO_VALUE;
+  // }
+  // else {
+  //   console.log("error");
+  // }
 });
