@@ -75,7 +75,7 @@ elCurrencyForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   var inputValue = Number(elCurrencyInput.value);
   var selectValue = Number(elSelect.value);
-  elCurrencyResult.textContent = inputValue * selectValue;
+  elCurrencyResult.textContent = inputValue * selectValue + " so'm";
   // var res ;
   // debugger;
   // if (!isNaN(inputValue) && selectValue.length) {
