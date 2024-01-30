@@ -1,33 +1,42 @@
 // RANDOM
-// var elForm = document.querySelector(".js-form");
-// var elInput = elForm.querySelector(".js-input");
-// var elResult = document.querySelector(".js-random-result");
-// var elAttemptNum = document.querySelector(".attempt-num")
+var elForm = document.querySelector(".js-form");
+var elInput = elForm.querySelector(".js-input");
+var elResult = document.querySelector(".js-random-result");
+var elAttemptNum = document.querySelector(".attempt-num")
 
-// var maxAttemptCount = 6;
-// var randomNumber = Math.floor(Math.random()*100);
-// elAttemptNum.textContent= `Attempt number: ${maxAttemptCount}`;
-// console.log(randomNumber);
-// elForm.addEventListener("submit", function(evt){
-//   evt.preventDefault();
-//   var inputValue =Number(elInput.value);
-//   elAttemptNum.textContent= `Attempt number: ${maxAttemptCount}`;
-//   maxAttemptCount--;
-//   if(inputValue > randomNumber) {
-//     elResult.textContent="Your number is higher than random number";
-//   } 
-//   else if(inputValue < randomNumber) {
-//     elResult.textContent="Your number is less than random number";
-//   } 
-//   else if (inputValue == randomNumber) {
-//     elResult.textContent = "Your answer is correct!";
-//     elInput.setAttribute("disabled", true);
-//     elForm.querySelector("button").setAttribute("disabled", true);
-//   }
-//   else {
-//     elResult.textContent="Incorrect";
-//   }
-// })
+var maxAttemptCount = 6;
+var randomNumber = Math.floor(Math.random() * 100);
+elAttemptNum.textContent = `Attempt number: ${maxAttemptCount}`;
+console.log(randomNumber);
+elForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  var inputValue = Number(elInput.value);
+  if (maxAttemptCount > 0) {
+    
+    maxAttemptCount--;
+    elAttemptNum.textContent = `Attempt number: ${maxAttemptCount}`;
+    if (inputValue > randomNumber) {
+      elResult.textContent = "Your number is higher than random number";
+      elInput.value = "";
+    }
+    else if (inputValue < randomNumber) {
+      elResult.textContent = "Your number is less than random number";
+      elInput.value = "";
+    }
+    else if (inputValue == randomNumber) {
+      elResult.textContent = "Your answer is correct!";
+      elInput.value = "";
+      elInput.setAttribute("disabled", true);
+      elForm.querySelector("button").setAttribute("disabled", true);
+    }
+    else {
+      elResult.textContent = "Incorrect";
+    }
+  }
+  else {
+    elResult.textContent = "Your choices are over!"
+  }
+})
 
 
 // CURRENCY
